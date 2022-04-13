@@ -8,24 +8,18 @@ public class MAIN {
     }
 
     public static void CloseProgram() {
-        System.out.println("Your want to exit:");
         System.out.println("if yes enter Y if not enter n");
+        System.out.println("Your want to exit:");;
 
         Scanner scanner = new Scanner(System.in);
         String exitProgram = scanner.nextLine();
         CreateDirectory createDirectory = new CreateDirectory();
 
-        String symbolExit = "y";
         String symbolContinue = "n";
+        String symbolExit = "y";
 
-        while (true){
-            if (exitProgram.equals(symbolExit)){
-                break;
-            }
-            if (exitProgram.equals(symbolContinue)){
-                System.out.println("Enter name file:");
-                createDirectory.createDirectory();
-            }
+        while (!exitProgram.equals(symbolExit)){
+            createDirectory.createDirectory();
         }
 
     }

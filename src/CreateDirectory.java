@@ -8,8 +8,6 @@ public class CreateDirectory {
     public void createDirectory(){
 
         try {
-            System.out.println("Enter name folder:");
-
             File Directory = new File(NameDirectory);
             if (!Directory.exists()){
                 if (Directory.mkdir()){
