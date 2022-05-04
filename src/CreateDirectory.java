@@ -1,27 +1,22 @@
 import java.io.File;
-import java.util.Scanner;
 
 public class CreateDirectory {
-    private Scanner scanner = new Scanner(System.in);
-    private String NameDirectory = scanner.nextLine();
 
-    public void createDirectory(){
+    public void createDirectory(String NameFile) {
 
         try {
-            File Directory = new File(NameDirectory);
+            File Directory = new File(NameFile);
             if (!Directory.exists()){
-                if (Directory.mkdir()){
-                    System.out.println("Directory successful created");
-                }
+                Directory.mkdir();
+                System.out.println("folder successful created");
             }
-            else {
-                System.out.println("Directory already exit");
+            else{
+                System.out.println("folder already created");
             }
 
-        }catch (Exception exception){
-            exception.printStackTrace();
-            System.out.println("Error");
+        } catch (Exception e) {
+            System.out.println("An error occurred");
+            e.printStackTrace();
         }
     }
-
-        }
+}

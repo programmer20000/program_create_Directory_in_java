@@ -2,25 +2,35 @@ import java.util.Scanner;
 
 public class MAIN {
     public static void main(String[] args) {
-        CreateDirectory createDirectory = new CreateDirectory();
-        createDirectory.createDirectory();
-        CloseProgram();
+        n();
+        ExitProgram();
     }
 
-    public static void CloseProgram() {
-        System.out.println("if yes enter Y if not enter n");
-        System.out.println("Your want to exit:");;
+    private static void n() {
+        System.out.print("Enter name folder:" + "\n");
+        Scanner scanner = new Scanner(System.in);
+        String NameFile = scanner.nextLine();
+        CreateDirectory createDirectory = new CreateDirectory();
+        createDirectory.createDirectory(NameFile);
+
+    }
+
+    private static void ExitProgram() {
+        System.out.println("\n" + "you want to exit if yes enter y if yes enter n:");
+        String SymbolContinue = "n";
+        String SymbolExit = "y";
 
         Scanner scanner = new Scanner(System.in);
-        String exitProgram = scanner.nextLine();
-        CreateDirectory createDirectory = new CreateDirectory();
+        String exit = scanner.nextLine();
 
-        String symbolContinue = "n";
-        String symbolExit = "y";
+        while (true) {
+            if (exit.equals(SymbolExit)) {
+                break;
+            }
 
-        while (!exitProgram.equals(symbolExit)){
-            createDirectory.createDirectory();
+            if (exit.equals(SymbolContinue)) {
+                n();
+            }
         }
-
     }
 }
